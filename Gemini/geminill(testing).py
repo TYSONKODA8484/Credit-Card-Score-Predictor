@@ -1,7 +1,7 @@
 import google.generativeai as genai
 import os
 
-# --- Configuration ---
+
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "YOUR_GEMINI_API_KEY")  # Replace or use env variable
 try:
     genai.configure(api_key=GEMINI_API_KEY)
@@ -9,7 +9,7 @@ try:
 except Exception as e:
     raise Exception(f"Failed to configure Gemini API: {e}")
 
-# --- Gemini Agent Functions ---
+
 def agent_financial_advice(user_data):
     """Provide personalized financial advice based on user data."""
     prompt = (

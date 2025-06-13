@@ -8,7 +8,7 @@ from geminill import (
     agent_financial_health_qna, agent_credit_score_improvement, agent_explain_financial_terms
 )
 
-# --- Load ML Models ---
+
 try:
     lgbm_model = joblib.load('lightgbm_model.pkl')
     xgb_model = joblib.load('xgboost_model.pkl')
@@ -16,7 +16,7 @@ except FileNotFoundError:
     st.error("Model files not found. Ensure 'lightgbm_model.pkl' and 'xgboost_model.pkl' are in the directory.")
     st.stop()
 
-# --- Session State Initialization ---
+
 if 'chat_history' not in st.session_state:
     st.session_state.chat_history = []
 if 'session_id' not in st.session_state:
@@ -26,7 +26,7 @@ if 'user_data' not in st.session_state:
 if 'prediction_label' not in st.session_state:
     st.session_state.prediction_label = None
 
-# --- ML Prediction Function ---
+
 def predict_credit_score_movement(model, input_data):
     try:
         prediction = model.predict([input_data])[0]
@@ -35,7 +35,7 @@ def predict_credit_score_movement(model, input_data):
     except Exception as e:
         return None, f"Prediction error: {e}"
 
-# --- Streamlit UI ---
+
 st.set_page_config(page_title="Credit Score Prediction & Financial Advisor", layout="wide", page_icon="🔮")
 st.title("🔮 Credit Score Prediction & Financial Advisor")
 st.markdown(""" 
@@ -43,10 +43,10 @@ st.markdown("""
     Enter your details below and interact with the advisor for insights on finance, credit, and more.
 """)
 
-# Tabs for Prediction and Chatbot
+
 tab1, tab2 = st.tabs(["📊 Credit Score Prediction", "💬 Financial Advisor Chat"])
 
-# --- Tab 1: Credit Score Prediction ---
+
 with tab1:
     st.header("Enter Your Financial Details")
     col1, col2 = st.columns(2)
