@@ -7,6 +7,8 @@ This README provides an overview of the project, details the logic and assumptio
 
 ## Part 1: Synthetic Dataset Creation
 The synthetic dataset simulates realistic credit behavior for 25,000 unique customers, with each row representing a customer-month combination. The dataset includes the following features:
+
+![Image description](logic.jpg)
 - **customer_id**: Unique identifier (1 to 25,000).
 - **age**: Divided into ranges (21-30, 31-40, 41-50, 51-60, 61-70) with probabilities: 55%, 18%, 12%, 8%, and 7%, respectively.
 - **gender**: Male or Female.
